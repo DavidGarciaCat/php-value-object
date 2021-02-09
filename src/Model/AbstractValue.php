@@ -10,15 +10,16 @@ abstract class AbstractValue
 
     protected static function cacheRetrieve($key): ?object
     {
-        if (array_key_exists($key, self::$cache)) {
-            return self::$cache[$key];
-        }
-
-        return null;
+        return self::$cache[self::getCacheKey($key)] ?? null;
     }
 
     protected static function cacheStore($key, object $object): void
     {
-        self::$cache[$key] = $object;
+        self::$cache[self::getCacheKey($key)] = $object;
+    }
+
+    private static function getCacheKey($key): string
+    {
+        return sprintf('%s', $key);
     }
 }
