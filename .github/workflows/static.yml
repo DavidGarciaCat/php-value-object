@@ -38,5 +38,8 @@ jobs:
             -   name: Checkout code
                 uses: actions/checkout@v2
 
+            -   name: Download dependencies
+                run: composer update --no-interaction --prefer-dist
+
             -   name: PHP-CS-Fixer
                 run: vendor/bin/php-cs-fixer fix src --dry-run --diff-format udiff
