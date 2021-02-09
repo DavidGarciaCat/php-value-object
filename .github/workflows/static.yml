@@ -1,0 +1,31 @@
+name: Static analysis
+
+on:
+    pull_request: ~
+    push:
+        branches:
+            - master
+
+jobs:
+    phpstan:
+        name: PHPStan
+        runs-on: 'ubuntu-latest'
+
+        steps:
+            -   name: Set up PHP
+                uses: shivammathur/setup-php@2.9.0
+                with:
+                    php-version: '7.4'
+                    coverage: none
+
+            -   name: Checkout code
+                uses: actions/checkout@v2
+
+            -   name: Download dependencies
+                run: composer update --no-interaction --prefer-dist
+
+            -   name: PHPStan
+                uses: docker://oskarstark/phpstan-ga:0.12.70
+                with:
+                    entrypoint: /composer/vendor/bin/phpstan
+                    args: analyze --no-progress
