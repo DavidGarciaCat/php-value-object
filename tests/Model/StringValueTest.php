@@ -58,7 +58,7 @@ class StringValueTest extends TestCase
         self::assertTrue($object1->equals($object2));
     }
 
-    public function testEmptyString()
+    public function testEmptyString(): void
     {
         $this->expectException(InvalidValueException::class);
 
