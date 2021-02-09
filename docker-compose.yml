@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+
+  php:
+    container_name: value-object-php
+    restart: unless-stopped
+    build:
+      context: ./docker
+    working_dir: /opt/project
+    volumes:
+      - .:/opt/project:cached
+      - ./docker/php.ini:/usr/local/etc/php/conf.d/docker-php-zzz-overrides.ini
