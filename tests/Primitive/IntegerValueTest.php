@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DavidGarcia\Tests\ValueObject\Model;
+namespace DavidGarcia\Tests\ValueObject\Primitive;
 
-use DavidGarcia\ValueObject\Model\IntegerValue;
+use DavidGarcia\ValueObject\Primitive\IntegerValue;
 use PHPUnit\Framework\TestCase;
 
 class IntegerValueTest extends TestCase

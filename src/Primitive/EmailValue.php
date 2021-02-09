@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DavidGarcia\ValueObject\Model;
+namespace DavidGarcia\ValueObject\Primitive;
 
 use DavidGarcia\ValueObject\Exception\InvalidValueException;
 use Egulias\EmailValidator\EmailValidator;

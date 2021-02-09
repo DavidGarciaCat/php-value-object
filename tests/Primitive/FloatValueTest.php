@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DavidGarcia\Tests\ValueObject\Model;
+namespace DavidGarcia\Tests\ValueObject\Primitive;
 
-use DavidGarcia\ValueObject\Model\FloatValue;
+use DavidGarcia\ValueObject\Primitive\FloatValue;
 use PHPUnit\Framework\TestCase;
 
 class FloatValueTest extends TestCase

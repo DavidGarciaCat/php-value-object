@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace DavidGarcia\Tests\ValueObject\Model;
+namespace DavidGarcia\Tests\ValueObject\Primitive;
 
 use DavidGarcia\ValueObject\Exception\InvalidValueException;
-use DavidGarcia\ValueObject\Model\StringValue;
+use DavidGarcia\ValueObject\Primitive\StringValue;
 use PHPUnit\Framework\TestCase;
 
 class StringValueTest extends TestCase
