@@ -1,0 +1,30 @@
+{
+    "name": "david-garcia/value-object",
+    "description": "Just another library to handle Value Objects and prevent the bad habit of Primitive Obsession",
+    "type": "library",
+    "authors": [
+        {
+            "name": "David Garcia",
+            "email": "me@davidgarcia.cat"
+        }
+    ],
+    "require": {
+        "php": ">= 7.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "phpstan/phpstan": "^0.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "DavidGarcia\\ValueObject\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DavidGarcia\\Tests\\ValueObject\\": "tests/"
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "stable"
+}
