@@ -8,6 +8,10 @@ Just another library to handle Value Objects and prevent the bad habit of Primit
 [![Quality Score](https://img.shields.io/scrutinizer/g/DavidGarciaCat/php-value-object.svg?style=flat-square)](https://scrutinizer-ci.com/g/DavidGarciaCat/php-value-object)
 [![Total Downloads](https://img.shields.io/packagist/dt/DavidGarciaCat/php-value-object.svg?style=flat-square)](https://packagist.org/packages/DavidGarciaCat/php-value-object)
 
+## Changelog
+
+All notable changes to this project will be documented in [this ChangeLog file](CHANGELOG.md).
+
 ## Install
 
 Require the vendor with Composer:
