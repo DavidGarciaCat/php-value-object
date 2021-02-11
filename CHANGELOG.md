@@ -12,7 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `\DavidGarcia\ValueObject\Primitive\StringAlternatives\EmailValue::class`
 - `\DavidGarcia\ValueObject\Primitive\StringAlternatives\DsnValue::class`
 
+### Removed
 
+- `\DavidGarcia\ValueObject\Primitive\EmailValue::class;`
 
 ## [0.1.0 Pre-release]
 
