@@ -28,7 +28,6 @@ Don't forget adding the use statement for each one of the value objects you need
 
 ```php
 // Example for StringValue
-
 use DavidGarcia\ValueObject\Primitive\StringValue;
 ```
 
@@ -65,14 +64,14 @@ Null values always hold a `null` value:
 $nullValue = NullValue::create();
 ```
 
-All value objects (except `NullValue`) have a `getValue()` method to expose the value:
+All value objects have a `getValue()` method to expose the value:
 
 ```php
 $stringValue = StringValue::create('qwerty');
 $stringValue->getValue(); // Returns 'qwerty'
 ```
 
-The `StringValue` value object any any other that extends from this one can use the `__toString` magic method to return the string value, as an alternative to the `getValue()` method:
+The `StringValue` value object and any other that extends from this one can use the `__toString` magic method to return the string value, as an alternative to the `getValue()` method:
 
 ```php
 $stringValue = StringValue::create('qwerty');
@@ -95,6 +94,7 @@ $stringValue4 = StringValue::create('qwerty');
 
 if ($stringValue3->equals($stringValue4)) {
     // TRUE
-    // We have a match for the values, so even if we handle two different objects, their values are equal
+    // We have a match for the values, so even if we handle two different objects,
+    // their values are equal
 }
 ```
