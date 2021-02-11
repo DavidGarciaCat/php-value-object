@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace DavidGarcia\ValueObject\Primitive;
 
 use DavidGarcia\ValueObject\Exception\InvalidValueException;
+use InvalidArgumentException;
+use Webmozart\Assert\Assert;
 
 class StringValue extends AbstractValue
 {
@@ -41,14 +43,18 @@ class StringValue extends AbstractValue
      */
     public static function create(string $value, bool $cache = false): self
     {
-        if ('' === trim($value)) {
-            throw new InvalidValueException('String value cannot be empty');
+        $trimmed = trim($value);
+
+        try {
+            Assert::stringNotEmpty($trimmed, 'String value cannot be empty');
+        } catch (InvalidArgumentException $exception) {
+            throw new InvalidValueException($exception->getMessage(), $exception);
         }
 
-        $object = $cache ? parent::cacheRetrieve($value) : null;
+        $object = $cache ? parent::cacheRetrieve($trimmed) : null;
 
         if (null === $object) {
-            $object = new self($value, $cache);
+            $object = new self($trimmed, $cache);
         }
 
         return $object;

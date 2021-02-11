@@ -9,6 +9,8 @@ use Egulias\EmailValidator\EmailValidator;
 use Egulias\EmailValidator\Result\InvalidEmail;
 use Egulias\EmailValidator\Validation\DNSCheckValidation;
 use Egulias\EmailValidator\Validation\RFCValidation;
+use InvalidArgumentException;
+use Webmozart\Assert\Assert;
 
 class EmailValue extends StringValue
 {
@@ -17,21 +19,25 @@ class EmailValue extends StringValue
      */
     public static function create(string $value, bool $cache = false): StringValue
     {
-        if ('' === trim($value)) {
-            throw new InvalidValueException('Email value cannot be empty');
+        $trimmed = trim($value);
+
+        try {
+            Assert::stringNotEmpty($trimmed, 'Email value cannot be empty');
+        } catch (InvalidArgumentException $exception) {
+            throw new InvalidValueException($exception->getMessage(), $exception);
         }
 
         $validator = new EmailValidator();
 
-        if (!$validator->isValid($value, new RFCValidation())) {
+        if (!$validator->isValid($trimmed, new RFCValidation())) {
             throw new InvalidValueException(self::emailValidatorError('RFC Validation has failed', $validator->getError()));
         }
 
-        if (!$validator->isValid($value, new DNSCheckValidation())) {
+        if (!$validator->isValid($trimmed, new DNSCheckValidation())) {
             throw new InvalidValueException(self::emailValidatorError('DNS Validation has failed', $validator->getError()));
         }
 
-        return parent::create($value, $cache);
+        return parent::create($trimmed, $cache);
     }
 
     /**

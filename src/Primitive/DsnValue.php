@@ -59,8 +59,10 @@ class DsnValue extends AbstractValue
     {
         $trimmed = trim($value);
 
-        if ('' === $trimmed) {
-            throw new InvalidValueException('Data Source Name (DSN) value cannot be empty');
+        try {
+            Assert::stringNotEmpty($trimmed, 'Data Source Name (DSN) value cannot be empty');
+        } catch (InvalidArgumentException $exception) {
+            throw new InvalidValueException($exception->getMessage(), $exception);
         }
 
         $object = $cache ? parent::cacheRetrieve($trimmed) : null;
