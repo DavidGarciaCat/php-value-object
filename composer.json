@@ -10,7 +10,8 @@
     ],
     "require": {
         "php": ">= 7.4",
-        "egulias/email-validator": "^3.0"
+        "egulias/email-validator": "^3.0",
+        "webmozart/assert": "^1.9"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.18",
