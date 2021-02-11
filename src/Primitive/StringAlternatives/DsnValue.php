@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace DavidGarcia\ValueObject\Primitive;
+namespace DavidGarcia\ValueObject\Primitive\StringAlternatives;
 
 use DavidGarcia\ValueObject\Exception\InvalidValueException;
+use DavidGarcia\ValueObject\Primitive\AbstractValue;
 use InvalidArgumentException;
 use Webmozart\Assert\Assert;
 

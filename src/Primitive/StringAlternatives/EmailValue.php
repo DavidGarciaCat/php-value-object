@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace DavidGarcia\ValueObject\Primitive;
+namespace DavidGarcia\ValueObject\Primitive\StringAlternatives;
 
 use DavidGarcia\ValueObject\Exception\InvalidValueException;
+use DavidGarcia\ValueObject\Primitive\StringValue;
 use Egulias\EmailValidator\EmailValidator;
 use Egulias\EmailValidator\Result\InvalidEmail;
 use Egulias\EmailValidator\Validation\DNSCheckValidation;

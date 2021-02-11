@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace DavidGarcia\Tests\ValueObject\Primitive;
+namespace DavidGarcia\Tests\ValueObject\Primitive\StringAlternatives;
 
 use DavidGarcia\ValueObject\Exception\InvalidValueException;
-use DavidGarcia\ValueObject\Primitive\EmailValue;
+use DavidGarcia\ValueObject\Primitive\StringAlternatives\EmailValue;
 use PHPUnit\Framework\TestCase;
 
 class EmailValueTest extends TestCase
